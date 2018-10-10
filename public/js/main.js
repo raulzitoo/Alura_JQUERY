@@ -15,13 +15,11 @@ $(function() {
 
 function atualizaTamanhoFrase(){
     var palavras = frase.split(" ").length;
-    console.log(frase);
     $("#tamanho-frase").text(palavras);
 }
 
 function inicializaContadores(){
     campo.on("input",function(){
-        console.log(campo.val());
         $("#contador-caracteres").text(campo.val().length);
         $("#contador-palavras").text(campo.val().split(/\S+/).length -1);
     });
@@ -38,9 +36,8 @@ function inicializaCronometro(){
                     campo.attr("disabled",true);
                     clearInterval(cronometroId);
                     campo.toggleClass("campo-desativado");
-                }else{
-                        
-                }        
+                    inserePlacar();
+                }   
             },1000);    
     });
 }
@@ -74,4 +71,5 @@ function inicializaMarcadores(){
     });
 
 }
+
 
