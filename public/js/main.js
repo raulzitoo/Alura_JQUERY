@@ -1,9 +1,9 @@
-var frase = $(".frase").text();
+var fraseInicial = $(".frase").text();
 var tempoInicial = $("#tempo-digitacao").text();
 var campo = $(".campo-digitacao");
 
 $(function() {
-    atualizaTamanhoFrase();
+    atualizaTamanhoFrase(fraseInicial);
     inicializaContadores();
     inicializaCronometro();
     inicializaMarcadores();
@@ -13,9 +13,10 @@ $(function() {
 
 
 
-function atualizaTamanhoFrase(){
+function atualizaTamanhoFrase(frase){
     var palavras = frase.split(" ").length;
     $("#tamanho-frase").text(palavras);
+    console.log(frase);
 }
 
 function inicializaContadores(){
@@ -58,7 +59,7 @@ function reiniciaJogo(){
 function inicializaMarcadores(){
     campo.on("input",function(){
         var digitado = campo.val();
-        var comparavel = frase.substr(0,digitado.length);
+        var comparavel = fraseInicial.substr(0,digitado.length);
         if(comparavel == digitado)
         {
             campo.addClass("borda-verde");
