@@ -28,8 +28,9 @@ function inicializaContadores(){
 
 function inicializaCronometro(){
     
-    var tempoRestante = $("#tempo-digitacao").text();
+    
     campo.one("focus",function(){ 
+        var tempoRestante = $("#tempo-digitacao").text();
         var cronometroId = setInterval(function(){
                 tempoRestante --;
                 $("#tempo-digitacao").text(tempoRestante);

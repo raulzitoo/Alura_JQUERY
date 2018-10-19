@@ -12,4 +12,10 @@ function trocaFraseAleatoria(data){
     console.log(data);
     frase.text(data[numeroAleatorio].texto);
     atualizaTamanhoFrase(data[numeroAleatorio].texto);
+    atualizaTempoInicial(data[numeroAleatorio].tempo);
+}
+
+function atualizaTempoInicial(tempo){
+    tempoInicial = tempo;
+    $("#tempo-digitacao").text(tempo);
 }
