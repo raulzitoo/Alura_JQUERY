@@ -8,6 +8,7 @@ $(function() {
     inicializaCronometro();
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
+    atualizaPlacar();
 });
 
 
@@ -30,7 +31,7 @@ function inicializaCronometro(){
     
     
     campo.one("focus",function(){ 
-        var tempoRestante = $("#tempo-digitacao").text();
+        var tempoRestante = $("#tempo-digitacao").text();           
         var cronometroId = setInterval(function(){
                 tempoRestante --;
                 $("#tempo-digitacao").text(tempoRestante);
