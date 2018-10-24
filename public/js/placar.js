@@ -55,3 +55,12 @@ function removerLinha(event){
         linha.remove();
     },1000);
 }
+
+
+$("#botao-sync").click(sincronizaPlacar);
+
+
+function sincronizaPlacar(){
+
+    console.log("Cliqueiii");
+}
