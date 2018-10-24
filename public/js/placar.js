@@ -6,7 +6,7 @@ function mostraPlacar(){
 
 function inserePlacar(){
     var tbory = $(".placar").find("tbody");
-    var usuario = "Raul";
+    var usuario = $("#usuarios").val();
     var numeroPalavras = $("#contador-palavras").text();
     tbory.prepend(inserelinha(usuario,numeroPalavras));
     scrollPLacar();
@@ -82,7 +82,14 @@ function sincronizaPlacar(){
         placar : placar
     };
     $.post("http://localhost:3000/placar",dados,function(){
+        $(".tooltip").tooltipster("open");
         console.log("Placar sincronizado com sucesso!");
+    }).fail(function(){
+        $(".tooltip").tooltipster("open").tooltipster("content", "Falha ao sincronizar"); ;
+    }).always(function(){
+        setTimeout(function(){
+            $(".tooltip").tooltipster("close");
+        },1200);
     });
 };
 
